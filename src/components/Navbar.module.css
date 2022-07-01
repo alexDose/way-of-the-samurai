@@ -1,0 +1,34 @@
+.nav {
+    grid-area: n;
+    background-color: lightskyblue;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-radius: 5px;
+    border-bottom: 1px solid darkslategrey;
+    border-right: 1px solid darkslategrey;
+}
+.item {
+    padding: 5px;
+}
+.item:hover {
+    background-color: dodgerblue;
+    border-radius: 5px;
+    border-bottom: 1px solid darkslategrey;
+    border-right: 1px solid darkslategrey;
+}
+.item a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: darkblue;
+}
+.item:hover a {
+    color: white;
+}
+.item a.active {
+    color: white;
+    padding: 5px;
+}
+.item a:hover {
+    border-bottom: none;
+    border-right: none;
+}
