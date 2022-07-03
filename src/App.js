@@ -6,10 +6,10 @@ import Profile from "./components/profile/Profile";
 import News from "./components/news/News";
 import Music from "./components/music/Music";
 import Settings from "./components/settings/Settings";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import {DialogsContainer} from "./components/dialogs/DialogsContainer";
 
-const App = (props) => {
+const App = () => {
 
     return (
             <div className="app-wrapper">
@@ -28,6 +28,5 @@ const App = (props) => {
             </div>
     );
 }
-
 
 export default App;
