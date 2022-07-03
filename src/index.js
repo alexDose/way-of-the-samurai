@@ -1,5 +1,5 @@
 import reportWebVitals from './reportWebVitals';
-import {store} from "./components/redux/State";
+import {store} from "./components/redux/Store";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -14,6 +14,7 @@ let renderEntireTree = (state) => {
         </React.StrictMode>
     );
 }
+
 renderEntireTree(store.getState())
 store.subscriber(renderEntireTree)
 // If you want to start measuring performance in your app, pass a function
