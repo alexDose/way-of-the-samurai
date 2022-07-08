@@ -3,19 +3,19 @@ import s from "./Users.module.css"
 import userPhoto from "../assets/images/user.png"
 import * as axios from "axios";
 
-export const Users = (props) => {
+export class Users extends React.Component {
 
-    if (props.users.length === 0) {
+    constructor(props) {
+        super(props);
         axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-            debugger
-            props.setUsers(response.data.items)
+            this.props.setUsers(response.data.items)
         })
     }
-
-    return (
-        <div>
-            {
-                props.users.map(u => <div key={u.id}>
+    render() {
+        return (
+            <div>
+                {
+                    this.props.users.map(u => <div key={u.id}>
                     <span>
                         <div>
                             <img className={s.userPhoto} src={u.photos.small != null ? u.photos.small : userPhoto}/>
@@ -23,14 +23,14 @@ export const Users = (props) => {
                         <div>
                             {u.followed
                                 ? <button onClick={() => {
-                                    props.unfollow(u.id)
+                                    this.props.unfollow(u.id)
                                 }}>Unfollow</button>
                                 : <button onClick={() => {
-                                    props.follow(u.id)
+                                    this.props.follow(u.id)
                                 }}>Follow</button>}
                         </div>
                     </span>
-                    <span>
+                        <span>
                         <span>
                             <div>{u.name}</div>
                             <div>{u.status}</div>
@@ -40,8 +40,9 @@ export const Users = (props) => {
                             <div>{"u.location.city"}</div>
                         </span>
                     </span>
-                </div>)
-            }
-        </div>
-    )
+                    </div>)
+                }
+            </div>
+        )
+    }
 }
