@@ -9,6 +9,7 @@ import Settings from "./components/settings/Settings";
 import {Route, Routes} from "react-router-dom";
 import {DialogsContainer} from "./components/dialogs/DialogsContainer";
 import {Users} from "./components/users/Users";
+import UsersContainer from "./components/users/UsersContainer";
 
 const App = () => {
 
@@ -21,7 +22,7 @@ const App = () => {
                         <Route path="/dialogs/*"
                                element={<DialogsContainer/>}/>
                         <Route path="/profile/*" element={<Profile/>}/>
-                        <Route path="/users/*" element={<Users/>}/>
+                        <Route path="/users/*" element={<UsersContainer/>}/>
                         <Route path="/news/*" element={<News/>}/>
                         <Route path="/music/*" element={<Music/>}/>
                         <Route path="/settings/*" element={<Settings/>}/>
