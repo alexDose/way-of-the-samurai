@@ -1,5 +1,6 @@
 const ADD_POST = "ADD-POST"
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
+const SET_USER_PROFILE = "SET-USER-PROFILE"
 
 let initialState =  {
     posts: [
@@ -22,7 +23,8 @@ let initialState =  {
             src: "https://pixlr.com/studio/template/6264364c-b8cc-4f4f-92d8-28c69a2b756w/thumbnail.webp"
         }
     ],
-    newPostText: "kamasutra"
+    newPostText: "kamasutra",
+    profile: null
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -39,6 +41,9 @@ const profileReducer = (state = initialState, action) => {
             }
             return  {...state, posts: [...state.posts, newPost], newPostText: ""}
         }
+        case SET_USER_PROFILE: {
+            return {...state, profile: action.profile}
+        }
         default:
             return state
         }
@@ -49,5 +54,8 @@ export const addPostActionCreator = () => ({type: ADD_POST})
 export const updateNewPostTextActionCreator = (text) => ({
     type: UPDATE_NEW_POST_TEXT, newText: text
 })
+
+export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
+
 
 export default profileReducer
