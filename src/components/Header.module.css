@@ -12,3 +12,10 @@
     border-right: 1px solid darkslategrey;
     border-radius: 50px;
 }
+.loginBlock {
+    float: right;
+}
+.loginBlock a {
+    color: whitesmoke;
+    text-decoration: none;
+}
