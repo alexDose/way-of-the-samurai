@@ -22,6 +22,7 @@ const MyPosts = (props) => {
         <div className={s.postsBlock}>
             <div>
                 <div>
+                    <h3>Profile</h3>
                     <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}></textarea>
                 </div>
                 <div>
