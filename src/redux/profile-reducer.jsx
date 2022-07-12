@@ -1,7 +1,6 @@
 import {profileAPI, usersAPI} from "../api/api";
 
 const ADD_POST = "ADD-POST"
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
 const SET_USER_PROFILE = "SET-USER-PROFILE"
 const SET_STATUS = "SET_STATUS"
 
@@ -26,20 +25,16 @@ let initialState =  {
             src: "https://pixlr.com/studio/template/6264364c-b8cc-4f4f-92d8-28c69a2b756w/thumbnail.webp"
         }
     ],
-    newPostText: "kamasutra",
     profile: null,
     status: ""
 }
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case UPDATE_NEW_POST_TEXT:
-            return  {...state, newPostText: action.newText}
-
         case ADD_POST: {
             let newPost = {
                 id: 4,
-                message: state.newPostText,
+                message: action.newPostText,
                 like: 0,
                 src: "https://images.vexels.com/media/users/3/145908/raw/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg"
             }
@@ -58,11 +53,7 @@ const profileReducer = (state = initialState, action) => {
         }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST})
-
-export const updateNewPostTextActionCreator = (text) => ({
-    type: UPDATE_NEW_POST_TEXT, newText: text
-})
+export const addPostActionCreator = (newPostText) => ({type: ADD_POST, newPostText})
 
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 
