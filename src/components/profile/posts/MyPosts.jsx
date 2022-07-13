@@ -27,8 +27,6 @@ const MyPosts = (props) => {
     let postElements = props.posts.map(p => <Post key={p.like} src={p.src} message={p.message} like={p.like}/>
     );
 
-    let newPostElement = React.createRef()
-
     const onAddPost = (values) => {
         props.addPost(values.newPostText)
     }
